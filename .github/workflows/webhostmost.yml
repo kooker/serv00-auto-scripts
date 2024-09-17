@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies  
         run: npm install puppeteer  
   
-      - name: Create accounts.json  
+      - name: Create webhostmost.json  
         run: echo "$WEBHOSTMOST_JSON" > webhostmost.json  
   
       - name: Login to website  
