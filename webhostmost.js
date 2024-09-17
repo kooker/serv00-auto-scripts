@@ -27,18 +27,18 @@ async function delayTime(ms) {
       await page.goto(url);
 
       // 清空用户名输入框的原有值
-      const usernameInput = await page.$('#id_username');
+      const usernameInput = await page.$('#inputEmail');
       if (usernameInput) {
         await usernameInput.click({ clickCount: 3 }); // 选中输入框的内容
         await usernameInput.press('Backspace'); // 删除原来的值
       }
 
       // 输入实际的账号和密码
-      await page.type('#id_username', username); // 确保 #id_username 对应新页面的用户名输入框
-      await page.type('#id_password', password); // 确保 #id_password 对应新页面的密码输入框
+      await page.type('#inputEmail', username); // 确保 #id_username 对应新页面的用户名输入框
+      await page.type('#inputPassword', password); // 确保 #id_password 对应新页面的密码输入框
 
       // 提交登录表单
-      const loginButton = await page.$('#submit'); // 确保 #submit 对应新页面的登录按钮
+      const loginButton = await page.$('#login'); // 确保 #submit 对应新页面的登录按钮
       if (loginButton) {
         await loginButton.click();
       } else {
